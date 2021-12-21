@@ -6,28 +6,32 @@ export default class Parent extends Component {
     super();
 
     this.state = {
-      componentColor: "blue",
+      backgroundColor: "aquamarine",
     };
   }
 
   handleClick() {
-    if (this.state.componentColor === "blue") {
+    if (this.state.backgroundColor === "aquamarine") {
       this.setState({
-        componentColor: "lightcoral",
+        backgroundColor: "lightcoral",
       });
     } else {
       this.setState({
-        componentColor: "blue",
+        backgroundColor: "aquamarine",
       });
     }
+    return this.state.backgroundColor;
   }
 
   render() {
     return (
-      <div className="parent">
+      <div
+        className="parent"
+        style={{ backgroundColor: this.state.backgroundColor }}
+      >
         <h2 className="component-header">Parent</h2>
-        <button onClick={this.handleClick.bind(this)}>Toggle Color</button>
-        <Child />
+        <Child handleClick={this.handleClick} />
+        <button onClick={this.handleClick.bind(this)}>Change Color</button>
       </div>
     );
   }
