@@ -1,19 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Child extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-  render() {
-    return (
-      <div
-        className="child"
-        style={{ backgroundColor: this.props.handleClick }}
-      >
-        <h2 className="component-header">Child</h2>
-      </div>
-    );
-  }
+export default function Child(props) {
+  return (
+    <div className="child" style={{ backgroundColor: props.backgroundColor }}>
+      <h1>Child</h1>
+    </div>
+  );
 }
