@@ -7,6 +7,7 @@ export default class Parent extends Component {
 
     this.state = {
       backgroundColor: "aquamarine",
+      childBackgroundColor: "lightcoral",
     };
   }
 
@@ -14,13 +15,14 @@ export default class Parent extends Component {
     if (this.state.backgroundColor === "aquamarine") {
       this.setState({
         backgroundColor: "lightcoral",
+        childBackgroundColor: "aquamarine",
       });
     } else {
       this.setState({
         backgroundColor: "aquamarine",
+        childBackgroundColor: "lightcoral",
       });
     }
-    return this.state.backgroundColor;
   }
 
   render() {
@@ -30,7 +32,7 @@ export default class Parent extends Component {
         style={{ backgroundColor: this.state.backgroundColor }}
       >
         <h2 className="component-header">Parent</h2>
-        <Child handleClick={this.handleClick} />
+        <Child backgroundColor={this.state.childBackgroundColor} />
         <button onClick={this.handleClick.bind(this)}>Change Color</button>
       </div>
     );
