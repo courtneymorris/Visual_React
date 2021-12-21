@@ -14,9 +14,10 @@ body {
 
 .app {
   min-height: 100vh;
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: lightcyan;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
   align-content: center;
 }
